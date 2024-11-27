@@ -8,10 +8,10 @@ export default defineConfig({
     pluginModuleFederation({
       name: 'mfe_host',
       shared: ['react', 'react-dom'],
-      remotes:{
-        mfe_remote: 'mfe_remote@http://localhost:3000/mf-manifest.json'
-      }
-    })
+      remotes: {
+        mfe_remote: `mfe_remote@${import.meta.env.MFE_REMOTE_URL}/mf-manifest.json`,
+      },
+    }),
   ],
   server: {
     port: 3001,
